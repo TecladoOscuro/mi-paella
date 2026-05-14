@@ -97,7 +97,7 @@ const _recipes: Recipe[] = [
     },
     parrilla: {
       steps: [
-        { order: 1, description: 'Enciende el fuego 45-60 min antes. Necesitas brasa viva, no llamas. La leña debe estar convertida en brasas rojas con ceniza blanca. Si usas LotusGrill, enciéndelo y espera 10-15 min hasta que las brasas tengan ceniza blanca.', time: '45-60 min', heatLevel: 'Preparación' },
+        { order: 1, description: 'Enciende el fuego 45-60 min antes. Necesitas brasa viva, no llamas. La leña debe estar convertida en brasas rojas con ceniza blanca. Si usas barbacoa de carbón o brasas, enciéndela y espera 10-15 min hasta que las brasas tengan ceniza blanca.', time: '45-60 min', heatLevel: 'Preparación' },
         { order: 2, description: 'Añade aceite de oliva generoso, que cubra bien el fondo de la paellera.', time: '30 seg', heatLevel: 'Fuerte' },
         { order: 3, description: 'Dora el pollo salpimentado con muchas brasas bajo la paellera hasta que esté dorado intenso. Gira la paellera de vez en cuando.', time: '10-12 min', heatLevel: 'Muchas brasas' },
         { order: 4, description: 'Añade la judía verde troceada y sofríe hasta que empiece a ablandarse.', time: '4-5 min', heatLevel: 'Brasas medias' },
@@ -107,14 +107,14 @@ const _recipes: Recipe[] = [
         baseSteps.hervir,
         baseSteps.arroz,
         { order: 10, description: 'Cocina 8 min con brasas abundantes bajo la paellera (borboteo alegre), luego 8-10 min retirando parte de las brasas para bajar el calor.', time: '16-18 min', heatLevel: 'Brasas fuertes → suaves' },
-        { order: 11, description: 'Provoca el socarrat: acumula brasas bajo el centro de la paellera 1-2 min. Escucha el crepitar. Si usas LotusGrill, añade un puñado extra de carbón.', time: '1-2 min', heatLevel: 'Brasas concentradas' },
+        { order: 11, description: 'Provoca el socarrat: acumula brasas bajo el centro de la paellera 1-2 min. Escucha el crepitar. Si usas barbacoa de carbón, añade un puñado extra de carbón.', time: '1-2 min', heatLevel: 'Brasas concentradas' },
         baseSteps.reposo,
       ],
       tips: [
         'Usa leña de naranjo, encina o sarmiento de vid. Evita pino (humo negro, sabor a gasolina).',
         'El viento es tu enemigo: busca un sitio resguardado o monta un cortavientos.',
         'Ten siempre un cubo de agua cerca. Seguridad primero.',
-        'LotusGrill: no llenes la cuba de carbón hasta arriba. Empieza con 1/3 de cesta para 350g de arroz. No apoyes la paellera directamente sobre el carbón.',
+        'Con barbacoa de carbón: no llenes la cuba de carbón hasta arriba. Empieza con 1/3 de cesta para 350g de arroz. No apoyes la paellera directamente sobre el carbón.',
         'La distancia entre brasas y paellera debe ser de 10-15 cm.',
       ],
       heatPhases: [
@@ -188,7 +188,7 @@ const _recipes: Recipe[] = [
     },
     parrilla: {
       steps: [
-        { order: 1, description: 'Prepara la brasa 45-60 min antes. Leña de naranjo o encina. LotusGrill: enciende y espera 10-15 min a que las brasas estén blancas.', time: '45-60 min', heatLevel: 'Preparación' },
+        { order: 1, description: 'Prepara la brasa 45-60 min antes. Leña de naranjo o encina. Barbacoa de carbón: enciende y espera 10-15 min a que las brasas estén blancas.', time: '45-60 min', heatLevel: 'Preparación' },
         { order: 2, description: 'Añade aceite de oliva generoso.', time: '30 seg', heatLevel: 'Fuerte' },
         { order: 3, description: 'Dora el pollo y el conejo con muchas brasas, empezando por el pollo. Paciencia: el dorado construye el sabor.', time: '14-16 min', heatLevel: 'Muchas brasas' },
         { order: 4, description: 'Añade judía verde y garrofón. Sofríe.', time: '5 min', heatLevel: 'Brasas medias' },
@@ -204,7 +204,7 @@ const _recipes: Recipe[] = [
       tips: [
         'El conejo en brasas queda espectacular si lo doras bien.',
         'Controlar el fuego de leña es práctica: aparta o añade brasas con pala metálica durante la cocción.',
-        'LotusGrill para 350g de arroz: usa 1/3 de cesta de carbón. Mejor quedarse corto y añadir.',
+        'Para 350g de arroz en barbacoa de carbón: usa 1/3 de cesta de carbón. Mejor quedarse corto y añadir.',
       ],
       heatPhases: [
         { phase: 'Sofreír carnes', time: '25-30 min', induction: '', parrilla: 'Muchas brasas, bien juntas bajo el centro' },
@@ -276,7 +276,7 @@ const _recipes: Recipe[] = [
     },
     parrilla: {
       steps: [
-        { order: 1, description: 'Prepara la brasa 45-60 min antes. LotusGrill: enciende y espera 10-15 min.', time: '45-60 min', heatLevel: 'Preparación' },
+        { order: 1, description: 'Prepara la brasa 45-60 min antes. Barbacoa de carbón: enciende y espera 10-15 min.', time: '45-60 min', heatLevel: 'Preparación' },
         { order: 2, description: 'Añade aceite de oliva generoso.', time: '30 seg', heatLevel: 'Fuerte' },
         { order: 3, description: 'Sofríe las alcachofas en cuartos hasta dorar.', time: '6-7 min', heatLevel: 'Brasas fuertes' },
         { order: 4, description: 'Añade pimiento y judía verde. Sofríe.', time: '5 min', heatLevel: 'Brasas medias' },
@@ -381,7 +381,7 @@ const _recipes: Recipe[] = [
       tips: [
         'El humo de la leña le da un toque ahumado al marisco que es espectacular.',
         'Con marisco, mejor quedarse corto de calor que pasarse. El marisco se arruga y reseca.',
-        'LotusGrill: usa 1/3 de cesta de carbón. El marisco es delicado con el calor.',
+        'Barbacoa de carbón: usa 1/3 de cesta de carbón. El marisco es delicado con el calor.',
       ],
       heatPhases: [
         { phase: 'Sofreír calamares + tomate', time: '14-18 min', induction: '', parrilla: 'Brasas fuertes → medias' },
@@ -727,7 +727,7 @@ const _recipes: Recipe[] = [
       tips: [
         'Si tu barbacoa no tiene tapa, puedes improvisar con papel de aluminio sobre la paellera.',
         'La brasa le da un sabor ahumado increíble a la morcilla y la panceta.',
-        'LotusGrill: el tamaño puede ser pequeño para esta receta. Úsala solo para el sofrito y termina en horno de casa.',
+        'Si tu barbacoa es pequeña para esta receta, Úsala solo para el sofrito y termina en horno de casa.',
       ],
       heatPhases: [
         { phase: 'Sofrito', time: '18-22 min', induction: '', parrilla: 'Brasas fuertes → medias' },
@@ -818,7 +818,7 @@ const _recipes: Recipe[] = [
       ],
       tips: [
         'En brasa, la mixta es más fácil de controlar que en inducción porque puedes mover las brasas por zonas (carnes a más calor, marisco a menos).',
-        'LotusGrill: usa 1/2 cesta de carbón. El control de zonas es más limitado.',
+        'Barbacoa de carbón: usa 1/2 cesta de carbón. El control de zonas es más limitado.',
       ],
       heatPhases: [
         { phase: 'Sofrito (carnes → calamares → verduras → tomate)', time: '30-35 min', induction: '', parrilla: 'Brasas fuertes → medias' },
@@ -995,7 +995,7 @@ const _recipes: Recipe[] = [
       tips: [
         'La brasa con tapa simula el horno de leña tradicional. Si no tienes tapa, cubre con papel albal.',
         'Poner brasas sobre la tapa de la paellera es el truco para dorar la costra.',
-        'LotusGrill: demasiado pequeña para esta receta. Mejor horno de casa para gratinar.',
+        'Si tu barbacoa es pequeña para esta receta, Mejor horno de casa para gratinar.',
       ],
       heatPhases: [
         { phase: 'Sofrito (carnes + embutidos + tomate + ñora)', time: '25-30 min', induction: '', parrilla: 'Brasas fuertes → medias' },
@@ -1173,7 +1173,7 @@ const _recipes: Recipe[] = [
       ],
       tips: [
         'El bogavante en brasa de naranjo es un espectáculo. Los medallones absorben el aroma ahumado.',
-        'LotusGrill: usa 1/2 cesta de carbón. Válido para este arroz.',
+        'Barbacoa de carbón: usa 1/2 cesta de carbón. Válido para este arroz.',
       ],
       heatPhases: [
         { phase: 'Sofreír bogavante', time: '4-5 min', induction: '', parrilla: 'Muchas brasas' },
