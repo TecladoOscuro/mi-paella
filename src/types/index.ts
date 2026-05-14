@@ -35,6 +35,7 @@ export interface Recipe {
   kcal: string
   description: string
   story: string
+  tags: string[]
   ingredients: Ingredient[]
   induction: CookingMethod
   parrilla: CookingMethod

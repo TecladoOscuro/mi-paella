@@ -11,6 +11,9 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
 @theme {
   --color-paella-accent: #d97706;
   --color-paella-orange: #92400e;

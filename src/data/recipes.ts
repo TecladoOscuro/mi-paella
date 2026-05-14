@@ -43,7 +43,7 @@ const baseSteps = {
   },
 }
 
-export const recipes: Recipe[] = [
+const _recipes: Recipe[] = [
   {
     id: 'pollo-verdura',
     name: 'Paella de Pollo y Verduras',
@@ -54,6 +54,7 @@ export const recipes: Recipe[] = [
     kcal: '~450 kcal/ración',
     description: 'La receta perfecta para tu primera vez. Solo pollo y judía verde, sin distracciones. Te enseña lo básico: sofrito, caldo, punto del arroz y socarrat.',
     story: 'Esta paella es la puerta de entrada al mundo del arroz. Sencilla, noble y resultona. Con solo dos ingredientes principales aprenderás todo lo que necesitas para recetas más complejas. El 50% del sabor está en el sofrito: dale tiempo y cariño al pollo y al tomate.',
+    tags: ["carne","principiante","seco","valenciana"],
     ingredients: [
       { id: 'pv-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'pv-pollo', name: 'Pollo troceado (muslos y contramuslos)', quantity: '650 g', category: 'proteina' },
@@ -142,6 +143,7 @@ export const recipes: Recipe[] = [
     kcal: '~420 kcal/ración',
     description: 'Un clásico valenciano. El conejo aporta un sabor más profundo y textura diferente. El truco es dorar bien las dos carnes.',
     story: 'Esta es la antesala de la paella valenciana tradicional. El conejo es una carne magra que requiere un dorado cuidadoso para no secarse. Si encuentras garrofón (judía blanca plana típica valenciana), añádelo: transforma la paella. Esta receta te enseña a manejar dos carnes distintas en el mismo sofrito.',
+    tags: ["carne","principiante","seco","valenciana","tradicional"],
     ingredients: [
       { id: 'pc-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'pc-pollo', name: 'Pollo troceado', quantity: '350 g', category: 'proteina' },
@@ -229,6 +231,7 @@ export const recipes: Recipe[] = [
     kcal: '~350 kcal/ración',
     description: 'Sin carne ni pescado. El reto es conseguir un caldo con cuerpo sin ayuda animal. Usa verduras de temporada y un buen sofrito.',
     story: 'Mucha gente cree que una paella sin carne es "de segunda". Nada más lejos: una buena paella de verduras es un plato con identidad propia. El secreto está en un caldo de verduras concentrado (casero si puedes) y en dorar bien las verduras en el sofrito. Las alcachofas y el pimiento rojo son los reyes aquí.',
+    tags: ["verdura","principiante","seco"],
     ingredients: [
       { id: 've-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 've-alcachofa', name: 'Alcachofas', quantity: '3 unidades', category: 'verdura' },
@@ -315,6 +318,7 @@ export const recipes: Recipe[] = [
     kcal: '~380 kcal/ración',
     description: 'Gambas, cigalas, mejillones, calamares. El marisco suelta agua y tiene un punto de cocción mucho más corto que la carne. Fácil pasarse.',
     story: 'La paella de marisco es posiblemente la más fotografiada y la que la gente asocia con "paella" fuera de Valencia. El reto real es respetar los puntos de cocción de cada marisco. Las gambas y cigalas se pasan en un suspiro; los mejillones se abren al vapor aparte. El fumet (caldo de pescado) casero es lo que separa una paella buena de una inolvidable.',
+    tags: ["marisco","celebracion","seco"],
     ingredients: [
       { id: 'ma-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'ma-gambones', name: 'Gambones grandes', quantity: '8 uds', category: 'marisco' },
@@ -404,6 +408,7 @@ export const recipes: Recipe[] = [
     kcal: '~450 kcal/ración',
     description: 'El arroz negro lleva tinta de calamar. Es cremoso, yodado, intenso. Un clásico de la costa mediterránea. Se hace en paellera igual.',
     story: 'El arròs negre es uno de los platos más queridos de la costa levantina, especialmente en Cataluña y la Comunidad Valenciana. La tinta de calamar le da ese color negro profundo y un sabor marino inconfundible. Suele quedar algo más meloso que una paella seca tradicional. Si nunca lo has probado, prepárate: es adictivo. El alioli por encima es obligatorio, no opcional.',
+    tags: ["marisco","alicantina","meloso"],
     ingredients: [
       { id: 'an-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'an-sepia', name: 'Sepia o calamares en tacos', quantity: '500 g', category: 'marisco' },
@@ -486,6 +491,7 @@ export const recipes: Recipe[] = [
     kcal: '~420 kcal/ración',
     description: '"Del señorito". Todo el marisco viene pelado: no hay que mancharse las manos. Perfecta para impresionar invitados.',
     story: 'El arroz del senyoret nació en Alicante con una idea sencilla: que los señoritos pudieran comer arroz sin mancharse los dedos pelando gambas. Todo el marisco se pela en crudo y con las cáscaras se hace un fumet que es oro líquido. Es una paella elegante, de las que sirves cuando quieres quedar bien. El rape es el ingrediente que la distingue: se deshace en la boca.',
+    tags: ["marisco","celebracion","seco","alicantina"],
     ingredients: [
       { id: 'se-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'se-gambas', name: 'Gambas peladas (reservar cabezas y cáscaras para el fumet)', quantity: '300 g', category: 'marisco' },
@@ -572,6 +578,7 @@ export const recipes: Recipe[] = [
     kcal: '~420 kcal/ración',
     description: 'La prima hermana de la paella, pero con fideos en lugar de arroz. Originaria de Gandía. Se tuesta el fideo antes y queda crujiente por fuera, meloso por dentro.',
     story: 'Cuenta la leyenda que la fideuà nació en un barco de pescadores en Gandía. El cocinero hacía un arroz a banda para la tripulación, pero el patrón se comía todo el arroz y dejaba solo el pescado. Así que el cocinero sustituyó el arroz por fideos para que el patrón no se los comiera. El fideo se tuesta primero en la paellera y luego absorbe el fumet. El resultado es único: textura diferente, sabor a mar intenso.',
+    tags: ["marisco","celebracion","seco","valenciana"],
     ingredients: [
       { id: 'fi-fideos', name: 'Fideos para fideuà (nº 2 o 3, tipo cabello de ángel grueso)', quantity: '350 g', category: 'arroz' },
       { id: 'fi-gambas', name: 'Gambas peladas', quantity: '250 g', category: 'marisco' },
@@ -659,6 +666,7 @@ export const recipes: Recipe[] = [
     kcal: '~350 kcal/ración',
     description: 'Arroz de horno, contundente, con costra de huevo. Típico de Valencia y Alicante. Lleva morcilla, patata y tomate. No necesita paellera tradicional: se hace en cazuela de barro.',
     story: 'El arroz al horno es el plato de aprovechamiento por excelencia. Nació en los hornos de los pueblos valencianos, donde la gente llevaba su cazuela de barro con los ingredientes y el panadero se lo cocinaba al rescoldo del horno. Lleva costillas de cerdo, morcilla, patata, garbanzos y se corona con rodajas de tomate y una cabeza de ajos. Al hornearse, se forma una costra dorada en la superficie y el arroz queda meloso. Si tu paellera es apta para horno, puedes adaptarla sin problema.',
+    tags: ["carne","tradicional","valenciana","meloso"],
     ingredients: [
       { id: 'ah-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'ah-costilla', name: 'Costilla de cerdo troceada', quantity: '400 g', category: 'proteina' },
@@ -745,6 +753,7 @@ export const recipes: Recipe[] = [
     kcal: '~380 kcal/ración',
     description: 'Carne + marisco. La polémica. Para unos herejía, para otros la más rica. El reto real es que carne y marisco tienen puntos de cocción distintos.',
     story: 'La paella mixta divide a los valencianos. Los puristas dicen que no es paella; los turistas la adoran. Nosotros no entramos en guerras: si quieres una paella con pollo y gambas, aquí tienes cómo hacerla bien. El truco es respetar el orden: primero las carnes (necesitan más tiempo), luego los calamares, luego verduras, y el marisco delicado al final. Si controlas esto, tendrás una gran paella, la llames como la llames.',
+    tags: ["carne","marisco","seco","celebracion"],
     ingredients: [
       { id: 'mx-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'mx-pollo', name: 'Pollo troceado', quantity: '300 g', category: 'proteina' },
@@ -836,6 +845,7 @@ export const recipes: Recipe[] = [
     kcal: '~400 kcal/ración',
     description: 'Arroz cocido en fumet de pescado, servido con el pescado aparte y alioli. Clásico de los pescadores alicantinos. Sabor a mar puro.',
     story: '"A banda" significa "por separado" en valenciano. Los pescadores cocinaban el arroz en el caldo de la morralla (pescado de roca) y servían el pescado aparte, con un buen alioli. Es uno de los arroces más puramente marineros. No lleva marisco vistoso: el sabor viene del fumet, que debe ser intenso, casi concentrado. El arroz queda meloso y amarillo del azafrán. Es la receta que todo alicantino defiende con orgullo.',
+    tags: ["marisco","tradicional","alicantina","meloso"],
     ingredients: [
       { id: 'ab-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'ab-morralla', name: 'Morralla (pescado de roca: gallineta, rascacio, cabracho, salmonete...)', quantity: '1 kg', category: 'marisco' },
@@ -919,6 +929,7 @@ export const recipes: Recipe[] = [
     kcal: '~400 kcal/ración',
     description: 'Arroz con costra de huevo dorada. Típico de Elche y Alicante. Lleva embutidos (longaniza, butifarra) y se corona con huevo batido que se gratina. Una joya.',
     story: 'El arroz con costra es el rey de los arroces alicantinos. Originario de Elche, se caracteriza por una costra de huevo batido que se forma en la superficie, protegiendo y dando cremosidad al arroz. Los embutidos (longaniza y butifarra) le dan un sabor profundo e inconfundible. Es un arroz de fiesta, de domingo. La costra debe quedar dorada y cuajada pero no quemada. Se rompe con la cuchara y... gloria.',
+    tags: ["carne","tradicional","alicantina","meloso","celebracion"],
     ingredients: [
       { id: 'ac-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'ac-pollo', name: 'Pollo troceado', quantity: '300 g', category: 'proteina' },
@@ -1010,6 +1021,7 @@ export const recipes: Recipe[] = [
     kcal: '~480 kcal/ración',
     description: 'La original. La que tiene denominación de origen no escrita. Lleva caracoles, garrofón y romero. No lleva marisco. Hacerla bien es un ritual.',
     story: 'Llegamos a la cima. La paella valenciana tradicional es la receta que se defiende como religión en Valencia. Pollo, conejo, caracoles de montaña (baquetes), garrofón, judía verde plana (ferraura), tomate, aceite, sal, azafrán, pimentón y romero. El caldo no es de brick: se crea durante la cocción con el agua, el sofrito y las carnes. Se hace con leña de naranjo. Lleva caracoles vivos que se purgan 24h antes. Si te dan cosa, puedes omitirlos. Esta paella te llevará varios intentos dominarla. Disfruta el camino.',
+    tags: ["carne","tradicional","valenciana","seco"],
     ingredients: [
       { id: 'vt-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'vt-pollo', name: 'Pollo troceado (muslos y contramuslos)', quantity: '400 g', category: 'proteina' },
@@ -1109,6 +1121,7 @@ export const recipes: Recipe[] = [
     kcal: '~430 kcal/ración',
     description: 'Arroz caldoso con bogavante, un clásico de celebraciones en la costa mediterránea. Cremoso, con sabor a mar intenso. No lleva socarrat.',
     story: 'El arroz caldoso de bogavante es el plato de las grandes ocasiones en la costa levantina y catalana. A diferencia de la paella seca, aquí el arroz nada en un caldo espeso y sabroso que es casi una crema. El bogavante se sofríe primero con su propio coral para potenciar el sabor. Se come con cuchara y el caldo es lo mejor. No busques socarrat: aquí el triunfo es un caldo untuoso que mancha el plato.',
+    tags: ["marisco","celebracion","caldoso"],
     ingredients: [
       { id: 'cb-arroz', name: info.rice.name, quantity: '300 g', category: 'arroz' },
       { id: 'cb-bogavante', name: 'Bogavante vivo (~600-800 g)', quantity: '1 ud', category: 'marisco' },
@@ -1187,6 +1200,7 @@ export const recipes: Recipe[] = [
     kcal: '~340 kcal/ración',
     description: 'Arroz cremoso de verduras y setas variadas. Perfecto para otoño. Sin carne ni pescado, pero con un caldo de verduras concentrado que no echa de menos nada.',
     story: 'Este arroz es el hermano cremoso de la paella de verduras. Lleva setas de temporada (boletus, shiitake, champiñones) y alcachofas. El resultado es un arroz untuoso que se hace solo: las setas sueltan su agua y crean una textura aterciopelada. Es el arroz vegetariano que haría dudar a un carnívoro. Otoño en un plato.',
+    tags: ["verdura","meloso","principiante"],
     ingredients: [
       { id: 'mv-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'mv-setas', name: 'Setas variadas (boletus, shiitake, champiñones)', quantity: '400 g', category: 'verdura' },
@@ -1266,6 +1280,7 @@ export const recipes: Recipe[] = [
     kcal: '~520 kcal/ración',
     description: 'Arroz de pato con setas, típico del interior de Valencia y Castellón en otoño. El pato confitado se deshace y las setas le dan profundidad.',
     story: 'Cuando llega el otoño en el interior valenciano, los cazadores vuelven con patos y las montañas se llenan de setas. Este arroz junta ambas tradiciones. El pato se cocina lentamente y suelta una grasa que impregna el arroz de sabor. Las setas (níscalos, boletus) absorben ese jugo y crean un plato de cuchara que sabe a monte. Es el arroz de los días de frío.',
+    tags: ["carne","celebracion","meloso","valenciana"],
     ingredients: [
       { id: 'ps-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'ps-pato', name: 'Muslos de pato confitados', quantity: '2 uds', category: 'proteina' },
@@ -1342,6 +1357,7 @@ export const recipes: Recipe[] = [
     kcal: '~400 kcal/ración',
     description: 'Conejo + caracoles, el hermano menor de la valenciana tradicional. Sabor a monte y campo. Los caracoles le dan un toque terroso inconfundible.',
     story: 'Antes de que la paella valenciana llevara pollo, el arroz de conejo y caracoles ya se hacía en las masías del interior. Es más austero que la valenciana completa pero igual de auténtico. Los caracoles (baquetes) se recogían tras las lluvias de primavera y se purgaban con harina. Este arroz huele a romero y tomillo. Si omites los caracoles, tienes una paella de conejo que ya es excelente.',
+    tags: ["carne","tradicional","seco","valenciana"],
     ingredients: [
       { id: 'cc-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'cc-conejo', name: 'Conejo troceado', quantity: '550 g', category: 'proteina' },
@@ -1423,6 +1439,7 @@ export const recipes: Recipe[] = [
     kcal: '~430 kcal/ración',
     description: 'El arroz cotidiano de las casas valencianas. Magro de cerdo, judía verde y tomate. Sencillo, rápido y de aprovechamiento.',
     story: 'No todas las paellas son de fiesta. Este arroz es el que hacían las abuelas un jueves cualquiera con lo que había en la nevera. El magro de cerdo es más barato que el pollo y queda tiernísimo en el sofrito. Es el arroz de diario, el que más veces se come en las casas valencianas y el que menos se ve en los restaurantes. Pero para muchos, es el que más sabe a hogar.',
+    tags: ["carne","principiante","seco","valenciana","rapido"],
     ingredients: [
       { id: 'mg-arroz', name: info.rice.name, quantity: info.rice.quantity, category: 'arroz' },
       { id: 'mg-magro', name: 'Magro de cerdo en trozos', quantity: '450 g', category: 'proteina' },
@@ -1493,14 +1510,16 @@ export const recipes: Recipe[] = [
   },
 ]
 
+export const recipes: Recipe[] = [..._recipes].sort((a, b) => a.level - b.level);
+
 export function getRecipeById(id: string): Recipe | undefined {
   return recipes.find((r) => r.id === id)
 }
 
 export function getDifficultyColor(difficulty: Recipe['difficulty']): string {
   switch (difficulty) {
-    case 'Muy fácil': return 'text-emerald-300 bg-emerald-500/10'
-    case 'Fácil': return 'text-green-300 bg-green-500/10'
+    case 'Muy fácil': return 'text-green-300 bg-green-500/10'
+    case 'Fácil': return 'text-emerald-300 bg-emerald-500/10'
     case 'Media': return 'text-yellow-300 bg-yellow-500/10'
     case 'Media-Alta': return 'text-orange-300 bg-orange-500/10'
     case 'Difícil': return 'text-red-300 bg-red-500/10'
