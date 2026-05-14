@@ -40,7 +40,7 @@ export function Detail() {
     return (
       <div className="min-h-dvh flex items-center justify-center p-5">
         <div className="text-center">
-          <p className="text-gray-400 text-lg mb-3">Receta no encontrada</p>
+          <p className="text-paella-muted text-lg mb-3">Receta no encontrada</p>
           <button
             onClick={() => navigate('/')}
             className="text-paella-red font-medium"
@@ -62,25 +62,25 @@ export function Detail() {
 
       <div className="px-5 pt-4 pb-2">
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-xs font-medium text-gray-400 bg-gray-100 rounded-md px-2 py-0.5">
+          <span className="text-xs font-medium text-paella-muted bg-paella-surface rounded-md px-2 py-0.5">
             Nivel {recipe.level}
           </span>
           <span className={`text-xs font-medium rounded-md px-2 py-0.5 ${getDifficultyColor(recipe.difficulty)}`}>
             {recipe.difficulty}
           </span>
-          <span className="text-xs text-gray-400">⏱ {recipe.totalTime}</span>
+          <span className="text-xs text-paella-muted">⏱ {recipe.totalTime}</span>
         </div>
-        <p className="text-sm text-gray-500 leading-relaxed">{recipe.story}</p>
+        <p className="text-sm text-paella-muted leading-relaxed">{recipe.story}</p>
       </div>
 
-      <div className="sticky top-0 z-10 bg-paella-cream/90 backdrop-blur-xl border-b border-gray-100">
+      <div className="sticky top-0 z-10 bg-paella-bg/90 backdrop-blur-xl border-b border-paella-border">
         <div className="flex">
           <button
             onClick={() => setActiveTab('ingredientes')}
             className={`flex-1 py-3 text-sm font-medium text-center transition-colors ${
               activeTab === 'ingredientes'
                 ? 'text-paella-red border-b-2 border-paella-red'
-                : 'text-gray-400'
+                : 'text-paella-muted'
             }`}
           >
             🛒 Ingredientes
@@ -90,7 +90,7 @@ export function Detail() {
             className={`flex-1 py-3 text-sm font-medium text-center transition-colors ${
               activeTab === 'preparacion'
                 ? 'text-paella-red border-b-2 border-paella-red'
-                : 'text-gray-400'
+                : 'text-paella-muted'
             }`}
           >
             🔥 Preparación
@@ -127,7 +127,7 @@ export function Detail() {
 
 function NavigationBar({ title, onBack }: { title: string; onBack: () => void }) {
   return (
-    <div className="sticky top-0 z-20 bg-white/90 backdrop-blur-xl border-b border-gray-100 px-2 pt-(--safe-bottom)">
+    <div className="sticky top-0 z-20 bg-paella-bg/90 backdrop-blur-xl border-b border-paella-border px-2 pt-(--safe-bottom)">
       <div className="flex items-center h-11">
         <button
           onClick={onBack}
@@ -139,7 +139,7 @@ function NavigationBar({ title, onBack }: { title: string; onBack: () => void })
           Inicio
         </button>
         <div className="flex-1 text-center">
-          <h2 className="text-sm font-semibold truncate px-4">{title}</h2>
+          <h2 className="text-sm font-semibold truncate px-4 text-gray-100">{title}</h2>
         </div>
         <div className="w-16" />
       </div>
@@ -180,11 +180,11 @@ function IngredientsTab({
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <div className="flex bg-gray-100 rounded-lg p-0.5">
+        <div className="flex bg-paella-surface rounded-lg p-0.5">
           <button
             onClick={() => onModeChange('lista')}
             className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
-              mode === 'lista' ? 'bg-white shadow-sm text-gray-800' : 'text-gray-400'
+              mode === 'lista' ? 'bg-paella-border shadow-sm text-gray-100' : 'text-paella-muted'
             }`}
           >
             📋 Lista
@@ -192,17 +192,20 @@ function IngredientsTab({
           <button
             onClick={() => onModeChange('compra')}
             className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
-              mode === 'compra' ? 'bg-white shadow-sm text-paella-green' : 'text-gray-400'
+              mode === 'compra' ? 'bg-paella-green text-white shadow-sm' : 'text-paella-muted'
             }`}
           >
             ✅ Modo compra
           </button>
         </div>
 
-        {mode === 'compra' && checkedCount > 0 && (
+        {mode === 'compra' && (
           <button
             onClick={onClear}
-            className="text-xs text-gray-400 active:text-paella-red"
+            disabled={checkedCount === 0}
+            className={`text-xs active:text-paella-red transition-colors ${
+              checkedCount === 0 ? 'text-paella-border' : 'text-paella-muted'
+            }`}
           >
             Limpiar
           </button>
@@ -211,10 +214,10 @@ function IngredientsTab({
 
       {mode === 'compra' && (
         <div className="mb-4">
-          <div className="flex items-center justify-between text-xs text-gray-400 mb-2">
+          <div className="flex items-center justify-between text-xs text-paella-muted mb-2">
             <span>{checkedCount}/{totalIngredients} conseguidos</span>
           </div>
-          <div className="w-full bg-gray-100 rounded-full h-1.5">
+          <div className="w-full bg-paella-surface rounded-full h-1.5">
             <div
               className="bg-paella-green h-1.5 rounded-full transition-all duration-300"
               style={{ width: `${(checkedCount / totalIngredients) * 100}%` }}
@@ -228,15 +231,15 @@ function IngredientsTab({
           const items = ingredients.filter((i) => i.category === cat)
           return (
             <div key={cat}>
-              <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+              <h3 className="text-xs font-semibold text-paella-muted uppercase tracking-wider mb-2">
                 {categoryLabels[cat] ?? cat}
               </h3>
               {mode === 'lista' ? (
                 <ul className="space-y-1.5">
                   {items.map((ing) => (
-                    <li key={ing.id} className="text-sm text-gray-700 flex justify-between py-1.5 border-b border-gray-50 last:border-0">
+                    <li key={ing.id} className="text-sm text-gray-300 flex justify-between py-1.5 border-b border-paella-border last:border-0">
                       <span>{ing.name}</span>
-                      <span className="text-gray-400 text-xs font-medium ml-2 shrink-0">{ing.quantity}</span>
+                      <span className="text-paella-muted text-xs font-medium ml-2 shrink-0">{ing.quantity}</span>
                     </li>
                   ))}
                 </ul>
@@ -248,13 +251,13 @@ function IngredientsTab({
                       <li key={ing.id}>
                         <button
                           onClick={() => onToggle(ing.id)}
-                          className="w-full flex items-center gap-3 py-2.5 border-b border-gray-50 last:border-0 active:bg-gray-50 -mx-2 px-2 rounded-lg transition-colors"
+                          className="w-full flex items-center gap-3 py-2.5 border-b border-paella-border last:border-0 active:bg-paella-surface -mx-2 px-2 rounded-lg transition-colors"
                         >
                           <div
                             className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors ${
                               checked
                                 ? 'bg-paella-green border-paella-green'
-                                : 'border-gray-300'
+                                : 'border-paella-border'
                             }`}
                           >
                             {checked && (
@@ -264,11 +267,11 @@ function IngredientsTab({
                             )}
                           </div>
                           <div className="flex-1 text-left">
-                            <span className={`text-sm ${checked ? 'text-gray-400 line-through' : 'text-gray-700'}`}>
+                            <span className={`text-sm ${checked ? 'text-paella-muted line-through' : 'text-gray-300'}`}>
                               {ing.name}
                             </span>
                           </div>
-                          <span className="text-xs text-gray-400 font-medium shrink-0">{ing.quantity}</span>
+                          <span className="text-xs text-paella-muted font-medium shrink-0">{ing.quantity}</span>
                         </button>
                       </li>
                     )
@@ -296,11 +299,11 @@ function PreparationTab({
 }) {
   return (
     <div>
-      <div className="flex bg-gray-100 rounded-lg p-0.5 mb-5">
+      <div className="flex bg-paella-surface rounded-lg p-0.5 mb-5">
         <button
           onClick={() => onModeChange('induccion')}
           className={`flex-1 px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
-            mode === 'induccion' ? 'bg-white shadow-sm text-gray-800' : 'text-gray-400'
+            mode === 'induccion' ? 'bg-paella-border shadow-sm text-gray-100' : 'text-paella-muted'
           }`}
         >
           ⚡ Inducción
@@ -308,7 +311,7 @@ function PreparationTab({
         <button
           onClick={() => onModeChange('parrilla')}
           className={`flex-1 px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
-            mode === 'parrilla' ? 'bg-white shadow-sm text-gray-800' : 'text-gray-400'
+            mode === 'parrilla' ? 'bg-paella-border shadow-sm text-gray-100' : 'text-paella-muted'
           }`}
         >
           🔥 Parrilla / BBQ
@@ -316,7 +319,7 @@ function PreparationTab({
       </div>
 
       <div className="space-y-4 mb-6">
-        <h3 className="text-sm font-semibold text-gray-800">Pasos</h3>
+        <h3 className="text-sm font-semibold text-gray-100">Pasos</h3>
         {method.steps.map((step) => (
           <div key={step.order} className="flex gap-3">
             <div className="flex flex-col items-center">
@@ -324,15 +327,15 @@ function PreparationTab({
                 {step.order}
               </div>
               {step.order < method.steps.length && (
-                <div className="w-0.5 flex-1 bg-gray-200 my-1" />
+                <div className="w-0.5 flex-1 bg-paella-border my-1" />
               )}
             </div>
             <div className="flex-1 pb-4">
-              <p className="text-sm text-gray-700 leading-relaxed">{step.description}</p>
+              <p className="text-sm text-gray-300 leading-relaxed">{step.description}</p>
               {(step.time || step.heatLevel) && (
                 <div className="flex gap-3 mt-1.5">
                   {step.time && (
-                    <span className="text-xs text-gray-400 flex items-center gap-1">
+                    <span className="text-xs text-paella-muted flex items-center gap-1">
                       ⏱ {step.time}
                     </span>
                   )}
@@ -348,25 +351,25 @@ function PreparationTab({
         ))}
       </div>
 
-      <div className="bg-gray-50 rounded-xl p-4 mb-6">
-        <h3 className="text-sm font-semibold text-gray-800 mb-3">Fases de calor</h3>
+      <div className="bg-paella-surface rounded-xl p-4 mb-6">
+        <h3 className="text-sm font-semibold text-gray-100 mb-3">Fases de calor</h3>
         <div className="overflow-x-auto -mx-1">
           <table className="w-full text-xs">
             <thead>
-              <tr className="border-b border-gray-200">
-                <th className="text-left py-2 pr-2 text-gray-400 font-medium">Fase</th>
-                <th className="text-left py-2 pr-2 text-gray-400 font-medium">Tiempo</th>
-                <th className="text-left py-2 text-gray-400 font-medium">
+              <tr className="border-b border-paella-border">
+                <th className="text-left py-2 pr-2 text-paella-muted font-medium">Fase</th>
+                <th className="text-left py-2 pr-2 text-paella-muted font-medium">Tiempo</th>
+                <th className="text-left py-2 text-paella-muted font-medium">
                   {mode === 'induccion' ? 'Inducción' : 'Parrilla'}
                 </th>
               </tr>
             </thead>
             <tbody>
               {method.heatPhases.map((phase, i) => (
-                <tr key={i} className="border-b border-gray-100 last:border-0">
-                  <td className="py-2 pr-2 text-gray-700">{phase.phase}</td>
-                  <td className="py-2 pr-2 text-gray-500">{phase.time}</td>
-                  <td className="py-2 text-gray-700 font-medium">
+                <tr key={i} className="border-b border-paella-border last:border-0">
+                  <td className="py-2 pr-2 text-gray-300">{phase.phase}</td>
+                  <td className="py-2 pr-2 text-paella-muted">{phase.time}</td>
+                  <td className="py-2 text-gray-300 font-medium">
                     {mode === 'induccion' ? phase.induction : phase.parrilla}
                   </td>
                 </tr>
@@ -378,12 +381,12 @@ function PreparationTab({
 
       {method.tips.length > 0 && (
         <div className="mb-6">
-          <h3 className="text-sm font-semibold text-gray-800 mb-3">
+          <h3 className="text-sm font-semibold text-gray-100 mb-3">
             Tips para {mode === 'induccion' ? 'Inducción' : 'Parrilla / BBQ'}
           </h3>
           <ul className="space-y-2">
             {method.tips.map((tip, i) => (
-              <li key={i} className="flex gap-2 text-sm text-gray-600">
+              <li key={i} className="flex gap-2 text-sm text-gray-400">
                 <span className="text-paella-orange shrink-0">💡</span>
                 <span className="leading-relaxed">{tip}</span>
               </li>
@@ -393,11 +396,11 @@ function PreparationTab({
       )}
 
       {tips.length > 0 && (
-        <div className="bg-paella-cream rounded-xl p-4 border border-orange-100">
-          <h3 className="text-sm font-semibold text-gray-800 mb-3">Consejos generales</h3>
+        <div className="bg-paella-card rounded-xl p-4 border border-paella-border">
+          <h3 className="text-sm font-semibold text-gray-100 mb-3">Consejos generales</h3>
           <ul className="space-y-2">
             {tips.map((tip, i) => (
-              <li key={i} className="flex gap-2 text-sm text-gray-600">
+              <li key={i} className="flex gap-2 text-sm text-gray-400">
                 <span className="text-paella-red shrink-0">🥘</span>
                 <span className="leading-relaxed">{tip}</span>
               </li>

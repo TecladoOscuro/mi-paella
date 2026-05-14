@@ -7,7 +7,15 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior: none;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: auto;
 }
 
 body {
@@ -16,12 +24,17 @@ body {
 }
 
 @theme {
-  --color-paella-red: #e53e3e;
-  --color-paella-red-dark: #c53030;
-  --color-paella-orange: #ed8936;
-  --color-paella-yellow: #ecc94b;
-  --color-paella-green: #38a169;
-  --color-paella-cream: #fff5f5;
-  --color-paella-dark: #2d1a0e;
+  --color-paella-red: #ef4444;
+  --color-paella-red-dark: #dc2626;
+  --color-paella-orange: #f97316;
+  --color-paella-yellow: #eab308;
+  --color-paella-green: #22c55e;
+  --color-paella-cream: #1e1e2e;
+  --color-paella-dark: #e4e4f0;
+  --color-paella-surface: #25253a;
+  --color-paella-card: #1e1e2e;
+  --color-paella-bg: #0f0f1a;
+  --color-paella-border: #2a2a3e;
+  --color-paella-muted: #8888a0;
   --font-family-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
 }
