@@ -61,9 +61,6 @@ export function Detail() {
 
       <div className="pt-[calc(6rem+env(safe-area-inset-top,0px))] px-5 pb-8">
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-xs font-medium text-paella-muted bg-paella-surface rounded-md px-2 py-0.5">
-            {recipe.level}
-          </span>
           <span className={`text-xs font-medium rounded-md px-2 py-0.5 ${getDifficultyColor(recipe.difficulty)}`}>
             {recipe.difficulty}
           </span>
