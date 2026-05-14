@@ -58,7 +58,7 @@ export function Detail() {
       <NavBar title={recipe.name} onBack={() => navigate('/')} />
       <TabBar activeTab={activeTab} onTab={setActiveTab} />
 
-      <div className="pt-24 px-5 pb-8">
+      <div className="pt-[calc(6rem+env(safe-area-inset-top,0px))] px-5 pb-8">
         <div className="flex items-center gap-2 mb-2">
           <span className="text-xs font-medium text-paella-muted bg-paella-surface rounded-md px-2 py-0.5">
             {recipe.level}
@@ -102,7 +102,7 @@ export function Detail() {
 
 function NavBar({ title, onBack }: { title: string; onBack: () => void }) {
   return (
-    <div className="fixed top-0 left-0 right-0 z-20 bg-paella-bg border-b border-paella-border">
+    <div className="fixed top-0 left-0 right-0 z-20 bg-paella-bg border-b border-paella-border pt-[env(safe-area-inset-top,0px)]">
       <div className="flex items-center h-12 px-2">
         <button onClick={onBack} className="flex items-center gap-1 text-paella-accent font-medium text-sm px-2 py-1">
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -121,7 +121,7 @@ function NavBar({ title, onBack }: { title: string; onBack: () => void }) {
 
 function TabBar({ activeTab, onTab }: { activeTab: Tab; onTab: (t: Tab) => void }) {
   return (
-    <div className="fixed top-12 left-0 right-0 z-10 bg-paella-bg border-b border-paella-border">
+    <div className="fixed top-[calc(3rem+env(safe-area-inset-top,0px))] left-0 right-0 z-10 bg-paella-bg border-b border-paella-border">
       <div className="flex">
         <button
           onClick={() => onTab('ingredientes')}

@@ -4,7 +4,7 @@ import { recipes, getDifficultyColor } from '../data/recipes'
 export function Home() {
   return (
     <div className="bg-paella-bg text-paella-text min-h-dvh">
-      <div className="fixed top-0 left-0 right-0 z-20 bg-paella-bg border-b border-paella-border">
+      <div className="fixed top-0 left-0 right-0 z-20 bg-paella-bg border-b border-paella-border pt-[env(safe-area-inset-top,0px)]">
         <div className="flex items-center justify-between h-12 px-5">
           <h1 className="text-lg font-bold">🥘 Mi Paella</h1>
           <span className="text-xs text-paella-muted bg-paella-surface rounded-full px-2.5 py-1">
@@ -13,7 +13,7 @@ export function Home() {
         </div>
       </div>
 
-      <div className="pt-12 pb-8 px-4">
+      <div className="pt-[calc(3rem+env(safe-area-inset-top,0px))] pb-8 px-4">
         <p className="text-sm text-paella-muted mb-5 px-1 pt-4">
           Recetas tradicionales de arroz en paellera. De más fácil a más avanzado.
         </p>
