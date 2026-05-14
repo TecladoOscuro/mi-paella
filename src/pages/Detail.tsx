@@ -68,7 +68,11 @@ export function Detail() {
           <span className={`text-xs font-medium rounded-md px-2 py-0.5 ${getDifficultyColor(recipe.difficulty)}`}>
             {recipe.difficulty}
           </span>
-          <span className="text-xs text-paella-muted">⏱ {recipe.totalTime}</span>
+        </div>
+        <div className="flex items-center gap-3 mb-2 text-xs text-paella-muted">
+          <span>⏱ {recipe.totalTime}</span>
+          <span>🍽 {recipe.servings}</span>
+          <span>{recipe.kcal}</span>
         </div>
         <p className="text-sm text-paella-muted leading-relaxed">{recipe.story}</p>
       </div>

@@ -1,26 +1,30 @@
 @import "tailwindcss";
 
-:root {
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
-}
-
 html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
   height: 100%;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
 }
 
 body {
+  width: 100%;
   height: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: auto;
+  margin: 0;
 }
 
-body {
-  overscroll-behavior: none;
-  -webkit-overflow-scrolling: touch;
+body * {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#root {
+  min-height: 100%;
 }
 
 @theme {
@@ -30,11 +34,12 @@ body {
   --color-paella-yellow: #eab308;
   --color-paella-green: #22c55e;
   --color-paella-cream: #1e1e2e;
-  --color-paella-dark: #e4e4f0;
-  --color-paella-surface: #25253a;
-  --color-paella-card: #1e1e2e;
-  --color-paella-bg: #0f0f1a;
-  --color-paella-border: #2a2a3e;
-  --color-paella-muted: #8888a0;
+  --color-paella-dark: #f1f1f7;
+  --color-paella-surface: #23233a;
+  --color-paella-card: #1a1a30;
+  --color-paella-bg: #0d0d1a;
+  --color-paella-border: #2a2a45;
+  --color-paella-muted: #9494b0;
+  --color-paella-text: #e2e2ee;
   --font-family-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
 }

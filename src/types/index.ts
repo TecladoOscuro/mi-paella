@@ -31,6 +31,8 @@ export interface Recipe {
   level: number
   difficulty: 'Muy fácil' | 'Fácil' | 'Media' | 'Media-Alta' | 'Difícil' | 'Avanzado'
   totalTime: string
+  servings: string
+  kcal: string
   description: string
   story: string
   ingredients: Ingredient[]

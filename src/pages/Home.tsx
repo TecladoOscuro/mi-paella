@@ -47,8 +47,11 @@ export function Home() {
                     <span className="text-xs text-paella-muted flex items-center gap-1">
                       ⏱ {recipe.totalTime}
                     </span>
+                    <span className="text-xs text-paella-muted flex items-center gap-1">
+                      🍽 {recipe.servings}
+                    </span>
                     <span className="text-xs text-paella-muted">
-                      {recipe.ingredients.length} ingredientes
+                      {recipe.kcal}
                     </span>
                   </div>
                 </div>
