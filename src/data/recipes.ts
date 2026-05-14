@@ -1114,7 +1114,7 @@ const _recipes: Recipe[] = [
   {
     id: 'caldoso-bogavante',
     name: 'Arroz Caldoso de Bogavante',
-    level: 4,
+    level: 13,
     difficulty: 'Media',
     totalTime: '55 min',
     servings: '4 raciones',
@@ -1193,7 +1193,7 @@ const _recipes: Recipe[] = [
   {
     id: 'meloso-verduras-setas',
     name: 'Arroz Meloso de Verduras y Setas',
-    level: 3,
+    level: 14,
     difficulty: 'Fácil',
     totalTime: '50 min',
     servings: '4-5 raciones',
@@ -1273,7 +1273,7 @@ const _recipes: Recipe[] = [
   {
     id: 'pato-setas',
     name: 'Arroz de Pato y Setas',
-    level: 7,
+    level: 15,
     difficulty: 'Media-Alta',
     totalTime: '65 min',
     servings: '4-5 raciones',
@@ -1350,7 +1350,7 @@ const _recipes: Recipe[] = [
   {
     id: 'conejo-caracoles',
     name: 'Arroz de Conejo y Caracoles',
-    level: 5,
+    level: 16,
     difficulty: 'Media',
     totalTime: '55 min',
     servings: '4-5 raciones',
@@ -1432,7 +1432,7 @@ const _recipes: Recipe[] = [
   {
     id: 'magro-verduras',
     name: 'Arroz de Magro y Verduras',
-    level: 2,
+    level: 17,
     difficulty: 'Fácil',
     totalTime: '45 min',
     servings: '4-5 raciones',
