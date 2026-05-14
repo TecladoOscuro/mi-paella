@@ -3,11 +3,11 @@ import { recipes, getDifficultyColor } from '../data/recipes'
 
 export function Home() {
   return (
-    <div className="pb-(--safe-bottom)">
-      <header className="sticky top-0 z-10 bg-paella-bg/90 backdrop-blur-xl border-b border-paella-border px-5 pt-(--safe-bottom)">
+    <div className="flex flex-col min-h-full">
+      <header className="sticky top-0 z-10 bg-paella-bg border-b border-paella-border px-5">
         <div className="flex items-center justify-between h-12">
           <div>
-            <h1 className="text-xl font-bold tracking-tight text-gray-100">🥘 Mi Paella</h1>
+            <h1 className="text-lg font-bold tracking-tight text-paella-text">🥘 Mi Paella</h1>
           </div>
           <span className="text-xs text-paella-muted bg-paella-surface rounded-full px-2.5 py-1">
             {recipes.length} recetas
@@ -15,7 +15,7 @@ export function Home() {
         </div>
       </header>
 
-      <main className="px-4 pt-4 pb-24">
+      <main className="flex-1 px-4 pt-4 pb-6">
         <p className="text-sm text-paella-muted mb-5 px-1">
           Recetas tradicionales de arroz en paellera. De más fácil a más avanzado.
         </p>
@@ -25,7 +25,7 @@ export function Home() {
             <Link
               key={recipe.id}
               to={`/receta/${recipe.id}`}
-              className="block bg-paella-card rounded-2xl shadow-sm border border-paella-border p-4 active:scale-[0.98] transition-transform duration-100"
+              className="block bg-paella-card rounded-2xl border border-paella-border p-4 active:scale-[0.98] transition-transform duration-100"
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
@@ -37,7 +37,7 @@ export function Home() {
                       {recipe.difficulty}
                     </span>
                   </div>
-                  <h2 className="text-base font-semibold leading-snug text-gray-100">
+                  <h2 className="text-base font-semibold leading-snug text-paella-text">
                     {recipe.name}
                   </h2>
                   <p className="text-sm text-paella-muted mt-1 line-clamp-2 leading-relaxed">

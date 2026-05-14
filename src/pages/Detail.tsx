@@ -57,7 +57,7 @@ export function Detail() {
   const currentMethod: CookingMethod = cookingMode === 'induccion' ? recipe.induction : recipe.parrilla
 
   return (
-    <div className="min-h-dvh pb-(--safe-bottom)">
+    <div className="min-h-full flex flex-col">
       <NavigationBar title={recipe.name} onBack={() => navigate('/')} />
 
       <div className="px-5 pt-4 pb-2">
@@ -77,7 +77,7 @@ export function Detail() {
         <p className="text-sm text-paella-muted leading-relaxed">{recipe.story}</p>
       </div>
 
-      <div className="sticky top-0 z-10 bg-paella-bg/90 backdrop-blur-xl border-b border-paella-border">
+      <div className="sticky top-11 z-10 bg-paella-bg border-b border-paella-border">
         <div className="flex">
           <button
             onClick={() => setActiveTab('ingredientes')}
@@ -131,7 +131,7 @@ export function Detail() {
 
 function NavigationBar({ title, onBack }: { title: string; onBack: () => void }) {
   return (
-    <div className="sticky top-0 z-20 bg-paella-bg/90 backdrop-blur-xl border-b border-paella-border px-2 pt-(--safe-bottom)">
+    <div className="sticky top-0 z-20 bg-paella-bg border-b border-paella-border px-2">
       <div className="flex items-center h-11">
         <button
           onClick={onBack}
@@ -143,7 +143,7 @@ function NavigationBar({ title, onBack }: { title: string; onBack: () => void })
           Inicio
         </button>
         <div className="flex-1 text-center">
-          <h2 className="text-sm font-semibold truncate px-4 text-gray-100">{title}</h2>
+          <h2 className="text-sm font-semibold truncate px-4 text-paella-text">{title}</h2>
         </div>
         <div className="w-16" />
       </div>
@@ -188,7 +188,7 @@ function IngredientsTab({
           <button
             onClick={() => onModeChange('lista')}
             className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
-              mode === 'lista' ? 'bg-paella-border shadow-sm text-gray-100' : 'text-paella-muted'
+              mode === 'lista' ? 'bg-paella-border shadow-sm text-paella-text' : 'text-paella-muted'
             }`}
           >
             📋 Lista
@@ -241,7 +241,7 @@ function IngredientsTab({
               {mode === 'lista' ? (
                 <ul className="space-y-1.5">
                   {items.map((ing) => (
-                    <li key={ing.id} className="text-sm text-gray-300 flex justify-between py-1.5 border-b border-paella-border last:border-0">
+                    <li key={ing.id} className="text-sm text-paella-text flex justify-between py-1.5 border-b border-paella-border last:border-0">
                       <span>{ing.name}</span>
                       <span className="text-paella-muted text-xs font-medium ml-2 shrink-0">{ing.quantity}</span>
                     </li>
@@ -271,7 +271,7 @@ function IngredientsTab({
                             )}
                           </div>
                           <div className="flex-1 text-left">
-                            <span className={`text-sm ${checked ? 'text-paella-muted line-through' : 'text-gray-300'}`}>
+                            <span className={`text-sm ${checked ? 'text-paella-muted line-through' : 'text-paella-text'}`}>
                               {ing.name}
                             </span>
                           </div>
@@ -307,7 +307,7 @@ function PreparationTab({
         <button
           onClick={() => onModeChange('induccion')}
           className={`flex-1 px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
-            mode === 'induccion' ? 'bg-paella-border shadow-sm text-gray-100' : 'text-paella-muted'
+            mode === 'induccion' ? 'bg-paella-border shadow-sm text-paella-text' : 'text-paella-muted'
           }`}
         >
           ⚡ Inducción
@@ -315,7 +315,7 @@ function PreparationTab({
         <button
           onClick={() => onModeChange('parrilla')}
           className={`flex-1 px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
-            mode === 'parrilla' ? 'bg-paella-border shadow-sm text-gray-100' : 'text-paella-muted'
+            mode === 'parrilla' ? 'bg-paella-border shadow-sm text-paella-text' : 'text-paella-muted'
           }`}
         >
           🔥 Parrilla / BBQ
@@ -323,7 +323,7 @@ function PreparationTab({
       </div>
 
       <div className="space-y-4 mb-6">
-        <h3 className="text-sm font-semibold text-gray-100">Pasos</h3>
+        <h3 className="text-sm font-semibold text-paella-text">Pasos</h3>
         {method.steps.map((step) => (
           <div key={step.order} className="flex gap-3">
             <div className="flex flex-col items-center">
@@ -335,7 +335,7 @@ function PreparationTab({
               )}
             </div>
             <div className="flex-1 pb-4">
-              <p className="text-sm text-gray-300 leading-relaxed">{step.description}</p>
+              <p className="text-sm text-paella-text leading-relaxed">{step.description}</p>
               {(step.time || step.heatLevel) && (
                 <div className="flex gap-3 mt-1.5">
                   {step.time && (
@@ -356,7 +356,7 @@ function PreparationTab({
       </div>
 
       <div className="bg-paella-surface rounded-xl p-4 mb-6">
-        <h3 className="text-sm font-semibold text-gray-100 mb-3">Fases de calor</h3>
+        <h3 className="text-sm font-semibold text-paella-text mb-3">Fases de calor</h3>
         <div className="overflow-x-auto -mx-1">
           <table className="w-full text-xs">
             <thead>
@@ -371,9 +371,9 @@ function PreparationTab({
             <tbody>
               {method.heatPhases.map((phase, i) => (
                 <tr key={i} className="border-b border-paella-border last:border-0">
-                  <td className="py-2 pr-2 text-gray-300">{phase.phase}</td>
+                  <td className="py-2 pr-2 text-paella-text">{phase.phase}</td>
                   <td className="py-2 pr-2 text-paella-muted">{phase.time}</td>
-                  <td className="py-2 text-gray-300 font-medium">
+                  <td className="py-2 text-paella-text font-medium">
                     {mode === 'induccion' ? phase.induction : phase.parrilla}
                   </td>
                 </tr>
@@ -385,12 +385,12 @@ function PreparationTab({
 
       {method.tips.length > 0 && (
         <div className="mb-6">
-          <h3 className="text-sm font-semibold text-gray-100 mb-3">
+          <h3 className="text-sm font-semibold text-paella-text mb-3">
             Tips para {mode === 'induccion' ? 'Inducción' : 'Parrilla / BBQ'}
           </h3>
           <ul className="space-y-2">
             {method.tips.map((tip, i) => (
-              <li key={i} className="flex gap-2 text-sm text-gray-400">
+              <li key={i} className="flex gap-2 text-sm text-paella-muted">
                 <span className="text-paella-orange shrink-0">💡</span>
                 <span className="leading-relaxed">{tip}</span>
               </li>
@@ -401,10 +401,10 @@ function PreparationTab({
 
       {tips.length > 0 && (
         <div className="bg-paella-card rounded-xl p-4 border border-paella-border">
-          <h3 className="text-sm font-semibold text-gray-100 mb-3">Consejos generales</h3>
+          <h3 className="text-sm font-semibold text-paella-text mb-3">Consejos generales</h3>
           <ul className="space-y-2">
             {tips.map((tip, i) => (
-              <li key={i} className="flex gap-2 text-sm text-gray-400">
+              <li key={i} className="flex gap-2 text-sm text-paella-muted">
                 <span className="text-paella-red shrink-0">🥘</span>
                 <span className="leading-relaxed">{tip}</span>
               </li>
