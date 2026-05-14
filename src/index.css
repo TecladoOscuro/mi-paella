@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+@theme {
+  --color-paella-red: #e53e3e;
+  --color-paella-red-dark: #c53030;
+  --color-paella-orange: #ed8936;
+  --color-paella-yellow: #ecc94b;
+  --color-paella-green: #38a169;
+  --color-paella-cream: #fff5f5;
+  --color-paella-dark: #2d1a0e;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+}
