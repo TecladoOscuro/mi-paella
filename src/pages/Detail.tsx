@@ -22,6 +22,7 @@ export function Detail() {
     if (id) {
       getShoppingList(id).then(setChecklist)
     }
+    window.scrollTo(0, 0)
   }, [id])
 
   const handleToggle = useCallback(async (ingredientId: string) => {
