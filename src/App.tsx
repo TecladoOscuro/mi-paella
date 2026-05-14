@@ -5,12 +5,10 @@ import { Detail } from './pages/Detail'
 export default function App() {
   return (
     <HashRouter>
-      <div className="min-h-dvh bg-paella-bg text-paella-dark font-sans">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/receta/:id" element={<Detail />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/receta/:id" element={<Detail />} />
+      </Routes>
     </HashRouter>
   )
 }

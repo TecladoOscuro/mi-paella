@@ -1499,11 +1499,11 @@ export function getRecipeById(id: string): Recipe | undefined {
 
 export function getDifficultyColor(difficulty: Recipe['difficulty']): string {
   switch (difficulty) {
-    case 'Muy fácil': return 'text-emerald-300 bg-emerald-500/15'
-    case 'Fácil': return 'text-green-300 bg-green-500/15'
-    case 'Media': return 'text-yellow-300 bg-yellow-500/15'
-    case 'Media-Alta': return 'text-orange-300 bg-orange-500/15'
-    case 'Difícil': return 'text-red-300 bg-red-500/15'
-    case 'Avanzado': return 'text-purple-300 bg-purple-500/15'
+    case 'Muy fácil': return 'text-emerald-300 bg-emerald-500/10'
+    case 'Fácil': return 'text-green-300 bg-green-500/10'
+    case 'Media': return 'text-yellow-300 bg-yellow-500/10'
+    case 'Media-Alta': return 'text-orange-300 bg-orange-500/10'
+    case 'Difícil': return 'text-red-300 bg-red-500/10'
+    case 'Avanzado': return 'text-purple-300 bg-purple-500/10'
   }
 }
