@@ -70,7 +70,7 @@ export function Detail() {
           <span>🍽 {recipe.servings}</span>
           <span>{recipe.kcal}</span>
         </div>
-        <p className="text-sm text-paella-muted leading-relaxed mb-6">{recipe.story}</p>
+        <p className="text-sm text-paella-muted leading-relaxed mb-8">{recipe.story}</p>
 
         {activeTab === 'ingredientes' && (
           <IngredientsTab
@@ -94,7 +94,6 @@ export function Detail() {
           />
         )}
       </div>
-    </div>
   )
 }
 
