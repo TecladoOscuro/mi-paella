@@ -59,7 +59,7 @@ export function Detail() {
       <NavBar title={recipe.name} onBack={() => navigate('/')} />
       <TabBar activeTab={activeTab} onTab={setActiveTab} />
 
-      <div className="pt-[calc(6rem+env(safe-area-inset-top,0px))] px-5 pb-8">
+      <div className="pt-[calc(6.5rem+env(safe-area-inset-top,0px))] px-5 pb-8">
         <div className="flex items-center gap-2 mb-2">
           <span className={`text-xs font-medium rounded-md px-2 py-0.5 ${getDifficultyColor(recipe.difficulty)}`}>
             {recipe.difficulty}
@@ -70,7 +70,7 @@ export function Detail() {
           <span>🍽 {recipe.servings}</span>
           <span>{recipe.kcal}</span>
         </div>
-        <p className="text-sm text-paella-muted leading-relaxed mb-8">{recipe.story}</p>
+        <p className="text-sm text-paella-muted leading-relaxed mb-10">{recipe.story}</p>
 
         {activeTab === 'ingredientes' && (
           <IngredientsTab
