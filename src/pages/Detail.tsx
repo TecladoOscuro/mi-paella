@@ -94,6 +94,7 @@ export function Detail() {
           />
         )}
       </div>
+    </div>
   )
 }
 
