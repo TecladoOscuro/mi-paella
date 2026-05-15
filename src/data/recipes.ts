@@ -136,7 +136,7 @@ const _recipes: Recipe[] = [
   {
     id: 'pollo-conejo',
     name: 'Paella de Pollo y Conejo',
-    level: 2,
+    level: 3,
     difficulty: 'Fácil',
     totalTime: '50 min',
     servings: '4-5 raciones',
@@ -224,7 +224,7 @@ const _recipes: Recipe[] = [
   {
     id: 'verduras',
     name: 'Paella de Verduras de Temporada',
-    level: 3,
+    level: 4,
     difficulty: 'Fácil',
     totalTime: '45 min',
     servings: '4-5 raciones',
@@ -311,7 +311,7 @@ const _recipes: Recipe[] = [
   {
     id: 'marisco',
     name: 'Paella de Marisco',
-    level: 4,
+    level: 6,
     difficulty: 'Media',
     totalTime: '50 min',
     servings: '4-5 raciones',
@@ -401,7 +401,7 @@ const _recipes: Recipe[] = [
   {
     id: 'arroz-negro',
     name: 'Arroz Negro (Arròs Negre)',
-    level: 5,
+    level: 8,
     difficulty: 'Media',
     totalTime: '55 min',
     servings: '4-5 raciones',
@@ -484,7 +484,7 @@ const _recipes: Recipe[] = [
   {
     id: 'senyoret',
     name: 'Arroz del Senyoret',
-    level: 6,
+    level: 10,
     difficulty: 'Media-Alta',
     totalTime: '55 min',
     servings: '4-5 raciones',
@@ -571,7 +571,7 @@ const _recipes: Recipe[] = [
   {
     id: 'fideua',
     name: 'Fideuà de Gandía',
-    level: 7,
+    level: 11,
     difficulty: 'Media-Alta',
     totalTime: '50 min',
     servings: '4-5 raciones',
@@ -659,7 +659,7 @@ const _recipes: Recipe[] = [
   {
     id: 'arroz-al-horno',
     name: 'Arroz al Horno (Arròs al Forn)',
-    level: 8,
+    level: 13,
     difficulty: 'Difícil',
     totalTime: '70 min',
     servings: '4-5 raciones',
@@ -746,7 +746,7 @@ const _recipes: Recipe[] = [
   {
     id: 'mixta',
     name: 'Paella Mixta',
-    level: 9,
+    level: 14,
     difficulty: 'Difícil',
     totalTime: '60 min',
     servings: '4-5 raciones',
@@ -838,7 +838,7 @@ const _recipes: Recipe[] = [
   {
     id: 'arroz-a-banda',
     name: 'Arroz a Banda',
-    level: 10,
+    level: 15,
     difficulty: 'Avanzado',
     totalTime: '70 min',
     servings: '4-5 raciones',
@@ -922,7 +922,7 @@ const _recipes: Recipe[] = [
   {
     id: 'arroz-con-costra',
     name: 'Arroz con Costra',
-    level: 11,
+    level: 16,
     difficulty: 'Avanzado',
     totalTime: '75 min',
     servings: '4-5 raciones',
@@ -1014,7 +1014,7 @@ const _recipes: Recipe[] = [
   {
     id: 'valenciana-tradicional',
     name: 'Paella Valenciana Tradicional',
-    level: 12,
+    level: 17,
     difficulty: 'Avanzado',
     totalTime: '70 min',
     servings: '4-5 raciones',
@@ -1114,7 +1114,7 @@ const _recipes: Recipe[] = [
   {
     id: 'caldoso-bogavante',
     name: 'Arroz Caldoso de Bogavante',
-    level: 13,
+    level: 7,
     difficulty: 'Media',
     totalTime: '55 min',
     servings: '4 raciones',
@@ -1193,7 +1193,7 @@ const _recipes: Recipe[] = [
   {
     id: 'meloso-verduras-setas',
     name: 'Arroz Meloso de Verduras y Setas',
-    level: 14,
+    level: 5,
     difficulty: 'Fácil',
     totalTime: '50 min',
     servings: '4-5 raciones',
@@ -1273,7 +1273,7 @@ const _recipes: Recipe[] = [
   {
     id: 'pato-setas',
     name: 'Arroz de Pato y Setas',
-    level: 15,
+    level: 12,
     difficulty: 'Media-Alta',
     totalTime: '65 min',
     servings: '4-5 raciones',
@@ -1350,7 +1350,7 @@ const _recipes: Recipe[] = [
   {
     id: 'conejo-caracoles',
     name: 'Arroz de Conejo y Caracoles',
-    level: 16,
+    level: 9,
     difficulty: 'Media',
     totalTime: '55 min',
     servings: '4-5 raciones',
@@ -1432,7 +1432,7 @@ const _recipes: Recipe[] = [
   {
     id: 'magro-verduras',
     name: 'Arroz de Magro y Verduras',
-    level: 17,
+    level: 2,
     difficulty: 'Fácil',
     totalTime: '45 min',
     servings: '4-5 raciones',
